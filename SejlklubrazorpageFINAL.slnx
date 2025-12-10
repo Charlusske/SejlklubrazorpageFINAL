@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="SejlklubConsoleFINAL/SejlklubConsoleFINAL.csproj" />
+  <Project Path="SejlklubLibraryFINAL/SejlklubLibraryFINAL.csproj" />
+  <Project Path="SejlklubrazorpageFINAL/SejlklubrazorpageFINAL.csproj" />
+</Solution>
