@@ -19,6 +19,9 @@ namespace SejlklubLibraryFINAL
             Description = description;
 
         }
+
+       
+
         #endregion
     }
 }
