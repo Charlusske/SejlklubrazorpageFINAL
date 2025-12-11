@@ -10,6 +10,7 @@ Member member1 = new Member("John Østergård", "john.østerg@gmail.com", 21, "1
 Member member2 = new Member("Anna Sørensen", "anna.sørensen@gmail.com", 22, "123anna123", 70150910);
 
 Console.WriteLine(member1);
+Console.WriteLine(member2);
 
 // Add members to the member list
 repository.Add(member1);
@@ -64,6 +65,7 @@ Boat boat1 = new Boat("Motorboat", "Yamaha 300", "Yamaha Engine", 5.5, 2.0, 1.2,
 Boat boat2 = new Boat("Sailboat", "Beneteau", "None", 8.0, 2.5, 1.5, 2010, "Wind Rider", "B002", Guid.NewGuid());
 
 Console.WriteLine(boat1);
+Console.WriteLine();
 Console.WriteLine(boat2);
 
 // Add boats to repository
