@@ -7,7 +7,7 @@ MemberRepository repository = new MemberRepository();
 
 Console.WriteLine("\n--- Create new members ---");
 Member member1 = new Member("John Østergård", "john.østerg@gmail.com", 21, "123john123", 70150909);
-Member member2 = new Member("Anna Sørensen", "anna.sørensen@gmail.com", 22, "123anna123", 70150910);
+Member member2 = new Member("Anna Sørensen", "anna.sørensen@gmail.com", 22, "1212hejhej", 70102938);
 
 Console.WriteLine(member1);
 Console.WriteLine(member2);
@@ -26,7 +26,7 @@ Console.WriteLine();
 // Update member information
 Console.WriteLine("\n--- Update member ---");
 Console.WriteLine("Updating member with ID 22...");
-Member updatedMember = new Member("Jane Updated", "updated@mail.com", 22, /*same ID*/ "newpass", 88888888); 
+Member updatedMember = new Member("Jane Updated", "updated@mail.com", 22, "newpass", 88888888); 
 repository.Update(updatedMember);
 Console.WriteLine(repository.GetById(22));
 
