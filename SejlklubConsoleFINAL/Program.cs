@@ -111,30 +111,87 @@ Console.ReadKey();
 
 #region News
 // Create news articles
+News newsPost = new News
+(   "Julefrokost i klubben", 
+    new DateOnly(2025, 12, 25), 
+    new TimeOnly(12, 0), 
+    "Vi har afholdt julefrokost i klubben!", 
+    Guid.NewGuid()
+);
+
+
 // Show all news articles
+List<News> newsPosts = new List<News> { newsPost };
+foreach (var post in newsPosts)
+{
+    Console.WriteLine($"Title: {post.Title}");
+    Console.WriteLine($"Content: {post.Description}");
+    Console.WriteLine($"Date: {post.Date}");
+    Console.WriteLine($"Id: {post.Id}");
+    Console.WriteLine();
+}
+
 // Update news articles
+newsPosts[0].UpdateDescription("Vi havde en fantastisk julefrokost i klubben!");
+
 // Delete news articles
+newsPosts.Remove(newsPosts[0]);
 
 #endregion
 
 #region Events
-// Create events
+
+// Create one event
+Event newYearEvent = new Event(
+    "NytårsKur i klubben",
+    new DateOnly(2026, 1, 16),
+    new TimeOnly(18, 0),
+    "Der afholdes NytårsKur i klubben",
+    "Community Center",
+    Guid.NewGuid()
+);
+
 // Show all events
-// Update events
-// Delete events
-// Sign up members for events
+List<Event> allEvents = new List<Event>();
+
+// Update event location
+newYearEvent.UpdateLocation("Main Hall");
+
+// Delete event
+allEvents.Remove(newYearEvent);
+
+// Sign up members for event
+newYearEvent.AddMember("member1@example.com");
+
 
 #endregion
 
 #region Booking
-// Create bookings
+
+// Create booking
+Booking booking = new Booking(
+    "2025-07-15",
+    "10:00",
+    "Island",
+    500.0,
+    true
+);
+
 // Show all bookings
-// Active bookings
-// End bookings
-// Edit bookings
+List<Booking> bookings = new List<Booking> { booking };
+
+// Active bookings – fx alle der er Booked = true
+List<Booking> activeBookings = bookings.Where(b => b.Booked).ToList();
+
+// End booking 
+booking.EndOfBooking();
+
+// Edit booking destination
+booking.Destination = "New Island";
 
 
 #endregion
+
 
 #region Statistics
 
