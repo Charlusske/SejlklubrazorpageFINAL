@@ -6,14 +6,18 @@ namespace SejlklubLibraryFINAL
 {
     public class MemberRepository
     {
+        #region Instance Fields
         private List<Member> _members;
+        #endregion
 
-        // Constructor
+        #region Constructor
         public MemberRepository()
         {
             _members = new List<Member>();
         }
+        #endregion
 
+        #region Methods
         // Add a new member
         public void Add(Member member)
         {
@@ -77,6 +81,7 @@ namespace SejlklubLibraryFINAL
             }
 
             return result;
+            #endregion
         }
 
     }

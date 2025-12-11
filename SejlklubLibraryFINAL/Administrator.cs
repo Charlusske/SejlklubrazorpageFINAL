@@ -6,10 +6,13 @@ namespace SejlklubLibraryFINAL
 {
     public class Administrator : Member
     {
+        #region constructors
         public Administrator(string name, string email, int id, string password, int phoneNumber) : base(name, email, id, password, phoneNumber)
         {
         }
+        #endregion
 
+        #region Methods
         public void CreateMember(MemberRepository repo, Member member)
         {
             repo.Add(member);
@@ -24,5 +27,7 @@ namespace SejlklubLibraryFINAL
         {
             repo.Delete(id);
         }
+        #endregion
     }
+
 }
