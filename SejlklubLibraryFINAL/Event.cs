@@ -22,6 +22,7 @@ namespace SejlklubLibraryFINAL
             Location = location;
             Id = id;
         }
+      
         #endregion
     }
 }
