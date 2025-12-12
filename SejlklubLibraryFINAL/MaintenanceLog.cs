@@ -13,8 +13,7 @@ namespace SejlklubLibraryFINAL
         private Guid _id;
         #endregion
 
-        #region properties
-
+        #region Properties
         public DateTime Timestamp
         {
             get { return _timestamp; }
@@ -32,7 +31,7 @@ namespace SejlklubLibraryFINAL
         #endregion
 
 
-        #region constructor
+        #region Constructor
         public MaintenanceLog(DateTime timestamp, Guid id)
         {
             _timestamp = timestamp;
@@ -41,7 +40,7 @@ namespace SejlklubLibraryFINAL
         #endregion
 
 
-        #region methods
+        #region Methods
         public string ReadLog()
         {
             return $"Log ID: {_id}\nTimestamp: {_timestamp}\nBoat: {_loggedBoat.Name} ({_loggedBoat.BoatNumber})\nLog Text: {_logText}";

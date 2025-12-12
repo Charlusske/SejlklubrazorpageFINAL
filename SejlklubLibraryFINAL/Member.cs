@@ -6,14 +6,15 @@ namespace SejlklubLibraryFINAL
 {
     public class Member
     {
-        // Instance fields
+        #region Instance fields
         private string _name;
         private string _email;
         private int _id;
         private string _password;
         private int _phoneNumber;
+        #endregion
 
-        // Properties
+        # region Properties
         public string Name
         {
             get { return _name; }
@@ -55,8 +56,9 @@ namespace SejlklubLibraryFINAL
             _phoneNumber = phoneNumber;
             Age = age;
         }
+        #endregion
 
-        // Methods
+        #region Methods
         public Member UpdateInfo(string name, string email, string password, int id, int phoneNumber)
         {
             _name = name;
@@ -73,7 +75,7 @@ namespace SejlklubLibraryFINAL
         {
             return $"Member ID: {_id}, Name: {_name}, Email: {_email}, Phone Number: {_phoneNumber}";
         }
-
+        #endregion
     }
 }
 
