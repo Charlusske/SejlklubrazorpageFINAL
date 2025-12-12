@@ -6,8 +6,7 @@ namespace SejlklubLibraryFINAL
 {
     public class Administrator : Member
     {
-        #region constructors
-        public Administrator(string name, string email, int id, string password, int phoneNumber) : base(name, email, id, password, phoneNumber)
+        public Administrator(string name, int age, string email, int id, string password, int phoneNumber) : base(name, age, email, id, password, phoneNumber)
         {
         }
         #endregion
