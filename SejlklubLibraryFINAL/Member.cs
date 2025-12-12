@@ -43,15 +43,17 @@ namespace SejlklubLibraryFINAL
             get { return _phoneNumber; }
             set { _phoneNumber = value; }
         }
+        public int Age { get; set; } 
 
         // Constructor
-        public Member(string name, string email, int id, string password, int phoneNumber)
+        public Member(string name, int age string email, int id, string password, int phoneNumber)
         {
             _name = name;
             Email = email;
             _id = id;
             _password = password;
             _phoneNumber = phoneNumber;
+            Age = age;
         }
 
         // Methods
