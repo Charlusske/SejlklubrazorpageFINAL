@@ -45,22 +45,17 @@ namespace SejlklubLibraryFINAL
             get { return _phoneNumber; }
             set { _phoneNumber = value; }
         }
-        public int Age
-        {
-            get { return _age; }
-            set { _age = value; }
-        }
-        #endregion
+        public int Age { get; set; } 
 
-        #region Constructor
-        public Member(string name, string email, int id, string password, int phoneNumber, int age)
+        // Constructor
+        public Member(string name, int age string email, int id, string password, int phoneNumber)
         {
             _name = name;
             Email = email;
             _id = id;
             _password = password;
             _phoneNumber = phoneNumber;
-            _age = age;
+            Age = age;
         }
         #endregion
 
