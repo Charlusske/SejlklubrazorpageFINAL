@@ -26,6 +26,29 @@ namespace SejlklubLibraryFINAL
         {
             repo.Delete(id);
         }
+
+        public void EditBoat(
+        Boat boat,
+        string boatType,
+        string model,
+        string motor,
+        double length,
+        double width,
+        double depth,
+        int buildYear,
+        string name,
+        string boatNumber)
+        {
+            boat.BoatType = boatType;
+            boat.Model = model;
+            boat.Motor = motor;
+            boat.Length = length;
+            boat.Width = width;
+            boat.Depth = depth;
+            boat.BuildYear = buildYear;
+            boat.Name = name;
+            boat.BoatNumber = boatNumber;
+        }
         #endregion
     }
 

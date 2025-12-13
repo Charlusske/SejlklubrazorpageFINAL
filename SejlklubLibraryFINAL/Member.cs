@@ -12,6 +12,7 @@ namespace SejlklubLibraryFINAL
         private int _id;
         private string _password;
         private int _phoneNumber;
+        private int _age;
         #endregion
 
         # region Properties
