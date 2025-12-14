@@ -49,11 +49,7 @@ namespace SejlklubLibraryFINAL
         }
 
 
-        public Booking CancelBooking()
-        {
-            Booked = false;
-            return this;
-        }
+        public void UpdateDestination(string newDest) { Destination = newDest; }
         #endregion
 
     }
