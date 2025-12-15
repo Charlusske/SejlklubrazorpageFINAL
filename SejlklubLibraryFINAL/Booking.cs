@@ -48,8 +48,17 @@ namespace SejlklubLibraryFINAL
             return this;
         }
 
-
         public void UpdateDestination(string newDest) { Destination = newDest; }
+
+
+        public bool CanRentBoat(Member member)
+        {
+            if (member.Age >= 8)
+            {
+                return true;
+            }
+            return false;
+        }
         #endregion
 
     }
