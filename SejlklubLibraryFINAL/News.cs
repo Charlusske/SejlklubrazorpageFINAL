@@ -7,21 +7,11 @@ namespace SejlklubLibraryFINAL
 {
     public class News : Post
     {
-        #region Properties
-        #endregion
-
-        #region Methods
-        public News(string title, DateOnly date, TimeOnly time, string description, Guid id)
+        #region Constructor
+        public News(string title, DateOnly date, TimeOnly time, string description) : base(title, date, time, description)
         {
-            Title = title;
-            Date = date;
-            Time = time;
-            Description = description;
-
         }
-
-       
-
         #endregion
     }
+
 }
