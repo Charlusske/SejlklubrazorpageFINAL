@@ -4,7 +4,49 @@
     ViewData["Title"] = "Home page";
 }
 
+@using SejlklubLibraryFINAL;
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="row justify-content-center">
+        <!-- Image Gallery -->
+        <div class="col-6">
+            <div id="imgCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="..." class="d-block w-100 placeholder" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="..." class="d-block w-100 placeholder" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="..." class="d-block w-100 placeholder" alt="...">
+                    </div>
+                </div>
+                <!-- Buttons for the image gallery -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-3">
+            <!-- List of posts/news here -->
+            @foreach (Event item in Model.Events)
+            {
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Title</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">@item.Location</h6>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">@item.Date</h6>
+                        <p class="card-text">@item.Description</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
 </div>
