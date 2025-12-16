@@ -20,7 +20,7 @@ namespace SejlklubrazorpageFINAL.Pages
 
         public void OnGet()
         {
-            Boat = new List<string> { "Optimistjolle", "Tera jollen", "Feva jollen", "Laser jollen", "Europajollen", "Snipe jollen", "Søstærk jollen", "Lynæs 14 jollen" };
+            Boat = new List<string> { "Optimistjolle", "Tera jollen", "Feva jollen", "Laser jollen", "Europajollen", "Snipe jollen", "Wayfarer jollen", "Lynæs 14 jollen" };
         }
 
         public void OnPost()
