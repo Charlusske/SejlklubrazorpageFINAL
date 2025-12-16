@@ -48,8 +48,8 @@ namespace SejlklubLibraryFINAL
             return this;
         }
 
-        public void UpdateDestination(string newDest) { Destination = newDest; }
-
+        public void UpdateDestination(string newDest) 
+        { Destination = newDest; }
 
         public bool CanRentBoat(Member member)
         {

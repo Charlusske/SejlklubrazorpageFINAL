@@ -73,7 +73,6 @@ namespace SejlklubLibraryFINAL
             Password=password;
             PhoneNumber=phoneNumber;
         }
-
         #endregion
 
         #region Methods

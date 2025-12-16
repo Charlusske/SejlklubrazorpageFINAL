@@ -28,17 +28,7 @@ namespace SejlklubLibraryFINAL
             repo.Delete(id);
         }
 
-        public void EditBoat(
-        Boat boat,
-        string boatType,
-        string model,
-        string motor,
-        double length,
-        double width,
-        double depth,
-        int buildYear,
-        string name,
-        string boatNumber)
+        public void EditBoat(Boat boat, string boatType, string model, string motor, double length, double width, double depth, int buildYear, string name,string boatNumber)
         {
             boat.BoatType = boatType;
             boat.Model = model;
