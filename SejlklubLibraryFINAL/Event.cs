@@ -9,20 +9,14 @@ namespace SejlklubLibraryFINAL
     {
         #region Properties
         public string Location { get; set; }
-        public Guid Id { get; set; }
         #endregion
 
-        #region Methods
-        public Event(string title, DateOnly date, TimeOnly time, string description, string location, Guid id)
+        #region Constructor
+        public Event(string title, DateOnly date, TimeOnly time, string description, string location) : base(title, date, time, description)
         {
-            Title = title;
-            Date = date;
-            Time = time;
-            Description = description;
             Location = location;
-            Id = id;
         }
-      
         #endregion
+
     }
 }
