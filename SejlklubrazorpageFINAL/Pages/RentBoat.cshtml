@@ -1,4 +1,47 @@
 ﻿@page
 @model SejlklubrazorpageFINAL.Pages.RentBoatModel
 @{
+    ViewData["Title"] = "Lej en båd";
 }
+
+<h2>Lej en båd</h2>
+
+<form method="post">
+    <div style="margin-bottom:10px;">
+        <label for="ChooseBoat">Vælg båd:</label>
+        <select id="ChooseBoat" asp-for="ChooseBoat">
+            <option value="">-- Vælg båd --</option>
+            @foreach (var baad in Model.Boat)
+            {
+                <option value="@baad">@baad</option>
+            }
+        </select>
+    </div>
+
+    <div style="margin-bottom:10px;">
+        <label for="Date">Dato:</label>
+        <input type="date" id="Date" asp-for="Date" 
+               min="@DateTime.Now.ToString("yyyy-MM-dd")" 
+               max="@DateTime.Now.AddYears(1).ToString("yyyy-MM-dd")" />
+    </div>
+
+    <div style="margin-bottom:10px;">
+        <label for="StartTime">Starttid:</label>
+        <input type="time" id="StartTime" asp-for="StartTime" />
+    </div>
+
+    <div style="margin-bottom:10px;">
+        <label for="EndTime">Sluttid:</label>
+        <input type="time" id="EndTime" asp-for="EndTime" />
+    </div>
+
+    <div>
+        <button type="submit">Book båd</button>
+    </div>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <p style="color:green; margin-top:10px;">@Model.Message</p>
+}
+
