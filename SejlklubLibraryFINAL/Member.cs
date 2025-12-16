@@ -63,6 +63,16 @@ namespace SejlklubLibraryFINAL
             _phoneNumber = phoneNumber;
             _age = age;
         }
+
+        public Member(string name, int age, string email, int id, string password, int phoneNumber)
+        {
+            Name=name;
+            Age=age;
+            Email=email;
+            Id=id;
+            Password=password;
+            PhoneNumber=phoneNumber;
+        }
         #endregion
 
         #region Methods
