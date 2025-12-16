@@ -156,7 +156,11 @@ Console.WriteLine(newsPosts.Count == 0 ? "No news articles found" : "News exist"
 #endregion
 
 #region Events
+// Create repository
+EventRepository eventRepo = new EventRepository();
+
 Console.WriteLine("\n--- Events ---");
+
 // Create one event
 Event newYearEvent = new Event(
     "NytårsKur i klubben",
@@ -167,15 +171,23 @@ Event newYearEvent = new Event(
     Guid.NewGuid()
 );
 
+// Tilføj event via repository
+eventRepo.AddEvent(newYearEvent);
+
 // Show all events
-List<Event> allEvents = new List<Event>();
+Console.WriteLine("\n--- All Events ---");
+foreach (Event ev in eventRepo.GetAllEvents())
+{
+    Console.WriteLine(ev);
+}
+
 
 // Update event location
 newYearEvent.UpdateLocation("Main Hall");
 Console.WriteLine($"Updated Location: {newYearEvent.Location}");
 
 // Delete event
-allEvents.Remove(newYearEvent);
+eventRepo.RemoveEvent(newYearEvent);
 
 // Sign up members for event
 bool signUp = newYearEvent.AddMember(member2);
@@ -186,7 +198,7 @@ Console.WriteLine(
 
 // Show all events and participants
 Console.WriteLine("\n--- All Events ---");
-foreach (Event ev in allEvents)
+foreach (Event ev in eventRepo.GetAllEvents())
 {
     Console.WriteLine(ev);
     Console.WriteLine("Participants:");
@@ -197,7 +209,7 @@ foreach (Event ev in allEvents)
 }
  #endregion
 
- #region Booking
+#region Booking
     // Create booking
     Booking booking = new Booking(
     "2025-07-15",
@@ -220,10 +232,6 @@ booking.EndOfBooking();
 booking.Destination = "New Island";
 #endregion
 
-
-#region Statistics
-
-#endregion
 
 
 
