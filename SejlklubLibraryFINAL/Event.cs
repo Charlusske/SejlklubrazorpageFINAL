@@ -12,7 +12,7 @@ namespace SejlklubLibraryFINAL
         #endregion
 
         #region Constructor
-        public Event(string title, DateOnly date, TimeOnly time, string description, string location) : base(title, date, time, description)
+        public Event(string title, DateOnly date, TimeOnly time, string description, string location, Guid guid) : base(title, date, time, description)
         {
             Location = location;
         }
