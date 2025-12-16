@@ -110,6 +110,7 @@ Console.ReadKey();
 #endregion
 
 #region News
+Console.WriteLine("\n--- News Articles ---");
 // Create news articles
 News newsPost = new News
 ("Julefrokost i klubben",
@@ -131,16 +132,31 @@ foreach (var post in newsPosts)
     Console.WriteLine();
 }
 
+Console.WriteLine("\n--- All News ---");
+foreach (News post in newsPosts)
+{
+    Console.WriteLine(post);
+}
+
 // Update news articles
 newsPosts[0].UpdateDescription("Vi havde en fantastisk julefrokost i klubben!");
 
-// Delete news articles
-newsPosts.Remove(newsPosts[0]);
+
+// Show updated news
+Console.WriteLine("\n--- Updated News ---");
+Console.WriteLine(newsPost);
+
+// Delete news article
+newsPosts.Remove(newsPost);
+
+// Show news after delete
+Console.WriteLine("\n--- News after delete ---");
+Console.WriteLine(newsPosts.Count == 0 ? "No news articles found" : "News exist");
 
 #endregion
 
 #region Events
-
+Console.WriteLine("\n--- Events ---");
 // Create one event
 Event newYearEvent = new Event(
     "NytårsKur i klubben",
@@ -156,19 +172,34 @@ List<Event> allEvents = new List<Event>();
 
 // Update event location
 newYearEvent.UpdateLocation("Main Hall");
+Console.WriteLine($"Updated Location: {newYearEvent.Location}");
 
 // Delete event
 allEvents.Remove(newYearEvent);
 
 // Sign up members for event
-newYearEvent.AddMember("member1@example.com");
+bool signUp = newYearEvent.AddMember(member2);
+Console.WriteLine(
+    signUp 
+    ? "Member signed up for event"
+    : "Member was already signed up" );
 
-#endregion
+// Show all events and participants
+Console.WriteLine("\n--- All Events ---");
+foreach (Event ev in allEvents)
+{
+    Console.WriteLine(ev);
+    Console.WriteLine("Participants:");
+    foreach (Member m in ev.Participants)
+    {
+        Console.WriteLine($"- {m.Name}, {m.Age} år");
+    }
+}
+ #endregion
 
-#region Booking
-
-// Create booking
-Booking booking = new Booking(
+ #region Booking
+    // Create booking
+    Booking booking = new Booking(
     "2025-07-15",
     "10:00",
     "Island",

@@ -51,7 +51,9 @@ namespace SejlklubLibraryFINAL
             set { _age = value; }
         }
 
-        // Constructor
+        #endregion
+
+        #region Constructor
         public Member(string name, string email, int id, string password, int phoneNumber, int age)
         {
             _name = name;
@@ -60,6 +62,16 @@ namespace SejlklubLibraryFINAL
             _password = password;
             _phoneNumber = phoneNumber;
             _age = age;
+        }
+
+        public Member(string name, int age, string email, int id, string password, int phoneNumber)
+        {
+            Name=name;
+            Age=age;
+            Email=email;
+            Id=id;
+            Password=password;
+            PhoneNumber=phoneNumber;
         }
 
         #endregion
@@ -74,8 +86,8 @@ namespace SejlklubLibraryFINAL
             _id = id;
 
             return this;
-
         }
+
 
         public override string ToString()
         {
