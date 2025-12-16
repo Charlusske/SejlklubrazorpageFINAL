@@ -221,12 +221,23 @@ foreach (Event ev in eventRepo.GetAllEvents())
 
 // Show all bookings
 List<Booking> bookings = new List<Booking> { booking };
+Console.WriteLine("\n--- All Bookings ---");
+foreach (Booking b in bookings)
+{
+    Console.WriteLine(b);
+}
 
 // Active bookings – fx alle der er Booked = true
 List<Booking> activeBookings = bookings.Where(b => b.Booked).ToList();
+Console.WriteLine("\n--- Active Bookings ---");
+foreach (Booking b in activeBookings)
+{
+    Console.WriteLine(b);
+}
 
 // End booking 
 booking.EndOfBooking();
+
 
 // Edit booking destination
 booking.Destination = "New Island";
