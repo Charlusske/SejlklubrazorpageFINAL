@@ -39,7 +39,6 @@ namespace SejlklubLibraryFINAL
         }
         #endregion
 
-
         #region Methods
         public string ReadLog()
         {

@@ -40,7 +40,6 @@ namespace SejlklubLibraryFINAL
             IsPublished = true; 
             PublishedAt = DateTime.Now;
             return true;
-
         }
 
         public void UpdateDescription(string newDescription)
@@ -53,8 +52,6 @@ namespace SejlklubLibraryFINAL
         {
             return $"Title: {Title}\nDescription: {Description}\nDate: {Date} kl. {Time}\nId: {Id}";
         }
-
-
         #endregion
     }
 }
