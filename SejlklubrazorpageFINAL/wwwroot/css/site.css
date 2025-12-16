@@ -151,7 +151,7 @@ header {
 #more4 {
     display: none;
 }
-
+/*two columns in membership*/
 .column {
     float: left;
     width: 50%;
@@ -162,3 +162,6 @@ header {
     display: table;
     clear: both;
 }
+
+
+
