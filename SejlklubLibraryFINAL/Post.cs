@@ -11,19 +11,50 @@ namespace SejlklubLibraryFINAL
         public DateOnly Date { get; set; }
         public TimeOnly Time { get; set; }
         public string Description { get; set; }
-        public Guid Guid { get; set; }
+        public Guid Id { get; set; }
+        public bool IsPublished { get; private set; }
+        public DateTime? PublishedAt { get; private set; }
         #endregion
 
+        #region Constructor
+        public Post(string title, DateOnly date, TimeOnly time, string description)
+        {
+            Title = title;
+            Date = date;
+            Time = time;
+            Description = description;
+            Id = Guid.NewGuid();
+            IsPublished = false;
+        }
+        #endregion
+
+
         #region Methods
+        public bool Publish()
+        {
+            if (IsPublished)
+            {
+                return false;
+            }
+
+            IsPublished = true; 
+            PublishedAt = DateTime.Now;
+            return true;
+
+        }
+
+        public void UpdateDescription(string newDescription)
+        {
+            Description = newDescription;
+        }
+
+
         public override string ToString()
         {
-            return base.ToString();
+            return $"Title: {Title}\nDescription: {Description}\nDate: {Date} kl. {Time}\nId: {Id}";
         }
 
-        public void Publish()
-        {
 
-        }
         #endregion
     }
 }

@@ -6,10 +6,11 @@ using SejlklubLibraryFINAL;
 MemberRepository repository = new MemberRepository();
 
 Console.WriteLine("\n--- Create new members ---");
-Member member1 = new Member("John Østergård", "john.østerg@gmail.com", 21, "123john123", 70150909);
-Member member2 = new Member("Anna Sørensen", "anna.sørensen@gmail.com", 22, "123anna123", 70150910);
+Member member1 = new Member("John Østergård", "john.østerg@gmail.com", 21, "123john123", 70150909, 53);
+Member member2 = new Member("Anna Sørensen", "anna.sørensen@gmail.com", 22, "1212hejhej", 70102938, 22);
 
 Console.WriteLine(member1);
+Console.WriteLine(member2);
 
 // Add members to the member list
 repository.Add(member1);
@@ -25,7 +26,7 @@ Console.WriteLine();
 // Update member information
 Console.WriteLine("\n--- Update member ---");
 Console.WriteLine("Updating member with ID 22...");
-Member updatedMember = new Member("Jane Updated", "updated@mail.com", 22, /*same ID*/ "newpass", 88888888); 
+Member updatedMember = new Member("Jane Updated", "updated@mail.com", 22, "newpass", 88888888, 34); 
 repository.Update(updatedMember);
 Console.WriteLine(repository.GetById(22));
 
@@ -64,6 +65,7 @@ Boat boat1 = new Boat("Motorboat", "Yamaha 300", "Yamaha Engine", 5.5, 2.0, 1.2,
 Boat boat2 = new Boat("Sailboat", "Beneteau", "None", 8.0, 2.5, 1.5, 2010, "Wind Rider", "B002", Guid.NewGuid());
 
 Console.WriteLine(boat1);
+Console.WriteLine();
 Console.WriteLine(boat2);
 
 // Add boats to repository
@@ -108,12 +110,13 @@ Console.ReadKey();
 #endregion
 
 #region News
+Console.WriteLine("\n--- News Articles ---");
 // Create news articles
 News newsPost = new News
-(   "Julefrokost i klubben", 
-    new DateOnly(2025, 12, 25), 
-    new TimeOnly(12, 0), 
-    "Vi har afholdt julefrokost i klubben!", 
+("Julefrokost i klubben",
+    new DateOnly(2025, 12, 25),
+    new TimeOnly(12, 0),
+    "Vi har afholdt julefrokost i klubben!",
     Guid.NewGuid()
 );
 
@@ -129,16 +132,31 @@ foreach (var post in newsPosts)
     Console.WriteLine();
 }
 
+Console.WriteLine("\n--- All News ---");
+foreach (News post in newsPosts)
+{
+    Console.WriteLine(post);
+}
+
 // Update news articles
 newsPosts[0].UpdateDescription("Vi havde en fantastisk julefrokost i klubben!");
 
-// Delete news articles
-newsPosts.Remove(newsPosts[0]);
+
+// Show updated news
+Console.WriteLine("\n--- Updated News ---");
+Console.WriteLine(newsPost);
+
+// Delete news article
+newsPosts.Remove(newsPost);
+
+// Show news after delete
+Console.WriteLine("\n--- News after delete ---");
+Console.WriteLine(newsPosts.Count == 0 ? "No news articles found" : "News exist");
 
 #endregion
 
 #region Events
-
+Console.WriteLine("\n--- Events ---");
 // Create one event
 Event newYearEvent = new Event(
     "NytårsKur i klubben",
@@ -154,20 +172,34 @@ List<Event> allEvents = new List<Event>();
 
 // Update event location
 newYearEvent.UpdateLocation("Main Hall");
+Console.WriteLine($"Updated Location: {newYearEvent.Location}");
 
 // Delete event
 allEvents.Remove(newYearEvent);
 
 // Sign up members for event
-newYearEvent.AddMember("member1@example.com");
+bool signUp = newYearEvent.AddMember(member2);
+Console.WriteLine(
+    signUp 
+    ? "Member signed up for event"
+    : "Member was already signed up" );
 
+// Show all events and participants
+Console.WriteLine("\n--- All Events ---");
+foreach (Event ev in allEvents)
+{
+    Console.WriteLine(ev);
+    Console.WriteLine("Participants:");
+    foreach (Member m in ev.Participants)
+    {
+        Console.WriteLine($"- {m.Name}, {m.Age} år");
+    }
+}
+ #endregion
 
-#endregion
-
-#region Booking
-
-// Create booking
-Booking booking = new Booking(
+ #region Booking
+    // Create booking
+    Booking booking = new Booking(
     "2025-07-15",
     "10:00",
     "Island",
@@ -186,8 +218,6 @@ booking.EndOfBooking();
 
 // Edit booking destination
 booking.Destination = "New Island";
-
-
 #endregion
 
 
