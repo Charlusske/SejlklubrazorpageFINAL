@@ -7,7 +7,6 @@ namespace SejlklubrazorpageFINAL.Pages
     {
         [BindProperty]
         public string ChooseBoat { get; set; }
-
         [BindProperty]
         public DateTime Date { get; set; }
 
@@ -16,7 +15,6 @@ namespace SejlklubrazorpageFINAL.Pages
 
         [BindProperty]
         public TimeSpan EndTime { get; set; }
-
         public List<string> Boat { get; set; }
         public string Message { get; set; }
 
@@ -27,7 +25,7 @@ namespace SejlklubrazorpageFINAL.Pages
 
         public void OnPost()
         {
-            OnGet(); // Genopbyg dropdown
+            OnGet(); 
 
             if (string.IsNullOrEmpty(ChooseBoat) || Date == default || StartTime == default || EndTime == default)
             {
