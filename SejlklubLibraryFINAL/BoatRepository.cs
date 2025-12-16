@@ -10,13 +10,11 @@ namespace SejlklubLibraryFINAL
         private List<Boat> _boats;
         #endregion
 
-
         #region methods
         public BoatRepository()
         {
             _boats = new List<Boat>();
         }
-
 
         public void AddBoat(Boat boat)
         {

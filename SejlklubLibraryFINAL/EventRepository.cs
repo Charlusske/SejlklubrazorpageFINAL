@@ -35,8 +35,6 @@ namespace SejlklubLibraryFINAL
         {
             return _events;
         }
-
-
         #endregion
     }
 }
