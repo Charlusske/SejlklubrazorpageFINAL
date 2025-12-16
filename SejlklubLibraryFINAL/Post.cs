@@ -43,12 +43,18 @@ namespace SejlklubLibraryFINAL
 
         }
 
-        public override string ToString()
+        public void UpdateDescription(string newDescription)
         {
-            return base.ToString();
+            Description = newDescription;
         }
 
-     
+
+        public override string ToString()
+        {
+            return $"Title: {Title}\nDescription: {Description}\nDate: {Date} kl. {Time}\nId: {Id}";
+        }
+
+
         #endregion
     }
 }
