@@ -9,13 +9,14 @@ namespace SejlklubLibraryFINAL
         #region Instance fields
         private string _name;
         private string _email;
-        private int _id;
+        private Guid _id;
         private string _password;
         private int _phoneNumber;
         private int _age;
+        private int id;
         #endregion
 
-        # region Properties
+        #region Properties
         public string Name
         {
             get { return _name; }
@@ -28,7 +29,7 @@ namespace SejlklubLibraryFINAL
             set { _email = value; }
         }
 
-        public int Id
+        public Guid Id
         {
             get { return _id; }
             set { _id = value; }
@@ -54,29 +55,21 @@ namespace SejlklubLibraryFINAL
         #endregion
 
         #region Constructor
-        public Member(string name, string email, int id, string password, int phoneNumber, int age)
+        public Member(string name, int age, string email, Guid id, string password, int phoneNumber)
         {
-            _name = name;
-            _email = email;
-            _id = id;
-            _password = password;
-            _phoneNumber = phoneNumber;
-            _age = age;
+            Name = name;
+            Age = age;
+            Email = email;
+            Id = id;
+            Password = password;
+            PhoneNumber = phoneNumber;
         }
 
-        public Member(string name, int age, string email, int id, string password, int phoneNumber)
-        {
-            Name=name;
-            Age=age;
-            Email=email;
-            Id=id;
-            Password=password;
-            PhoneNumber=phoneNumber;
-        }
+
         #endregion
 
         #region Methods
-        public Member UpdateInfo(string name, string email, string password, int id, int phoneNumber)
+        public Member UpdateInfo(string name, string email, string password, Guid id, int phoneNumber)
         {
             _name = name;
             _email = email;

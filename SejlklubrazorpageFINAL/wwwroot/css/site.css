@@ -46,14 +46,13 @@ html {
 }
 
 .myfooter {
-    position: relative;
-    top: 300px;
-    background-color: #0a2540;
+    background-color: var(--navy);
     color: var(--white);
     padding: 2rem;
     text-align: center;
     font-size: 0.9rem;
 }
+
 header {
     background-color: var(--navy);
     color: var(--white);
@@ -151,3 +150,8 @@ header {
 #more4 {
     display: none;
 }
+
+* {
+    box-sizing: border-box;
+}
+

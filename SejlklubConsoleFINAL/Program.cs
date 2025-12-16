@@ -6,29 +6,41 @@ using SejlklubLibraryFINAL;
 MemberRepository repository = new MemberRepository();
 
 Console.WriteLine("\n--- Create new members ---");
-Member member1 = new Member("John Østergård", "john.østerg@gmail.com", 21, "123john123", 70150909, 53);
-Member member2 = new Member("Anna Sørensen", "anna.sørensen@gmail.com", 22, "1212hejhej", 70102938, 22);
+Member member1 = new Member("John Østergård", 53, "john.osterg@gmail.com", Guid.NewGuid(), "123john123", 70150909);
+
+//Save the member ID for later use
+Guid member1Id = member1.Id;
+
+// Add members to the member list
+repository.Add(member1);
+
+// Create another member
+Member member2 = new Member("Anna Sørensen", 22, "anna.sørensen@gmail.com", Guid.NewGuid(), "1212hejhej", 70102938);
+//Save the member ID for later use
+Guid member2Id = member2.Id;
+
+// Add members to the member list
+repository.Add(member2);
 
 Console.WriteLine(member1);
 Console.WriteLine(member2);
 
-// Add members to the member list
-repository.Add(member1);
-repository.Add(member2);
-
 // Delete members from the member list
 Console.WriteLine("\n--- Deleting member ---");
 Console.WriteLine("Deleting member with ID 21");
-bool deleted = repository.Delete(21);
-Console.WriteLine(deleted ? "Member deleted successfully." : "Member not found.");
+bool deleted = repository.Delete(member1Id);
+Console.WriteLine(deleted ? "Member deleted" : "Member not found");
 Console.WriteLine();
 
 // Update member information
 Console.WriteLine("\n--- Update member ---");
 Console.WriteLine("Updating member with ID 22...");
-Member updatedMember = new Member("Jane Updated", "updated@mail.com", 22, "newpass", 88888888, 34); 
+Member updatedMember = new Member("Jane Updated", 34, "updated@mail.com", Guid.NewGuid(), "newpass", 88888888);
+
+//Save the member ID for later use
+Guid updatedMemberId = updatedMember.Id;
 repository.Update(updatedMember);
-Console.WriteLine(repository.GetById(22));
+Console.WriteLine(repository.GetById(updatedMemberId));
 
 // Search for members by name
 Console.WriteLine("\n--- Search for member by name ---");
@@ -39,11 +51,20 @@ foreach (Member member in foundByName)
     Console.WriteLine(member);
 }
 
-// Search for member by ID. 
+// Search for member by ID using Guid
 Console.WriteLine("\n--- Search member by ID ---");
-Console.WriteLine("Search by ID (21):");
-Member foundById = repository.GetById(21);
-Console.WriteLine(foundById);
+Console.WriteLine($"Search by ID ({member1Id}):");
+
+Member foundById = repository.GetById(member1Id);
+
+if (foundById != null)
+{
+    Console.WriteLine(foundById);
+}
+else
+{
+    Console.WriteLine("Member not found");
+}
 
 // Show all members
 Console.WriteLine("\n--- Show all members ---");
@@ -53,6 +74,16 @@ foreach (Member member in allMembers)
 {
     Console.WriteLine(member);
 }
+#endregion#
+
+#region Administrator
+Console.WriteLine("\n--- Administrator Actions ---");
+// Create administrator
+Administrator admin = new Administrator("Freja Frandsen", 30, "FF2020@gmail.com", Guid.NewGuid(), "adminpass", 70234567);
+
+// Delete a member using Guid
+Console.WriteLine($"Admin deleting member with ID {member1Id}");
+admin.DeleteMember(repository, member1Id);
 #endregion
 
 #region Boat and MaintenanceLog
@@ -153,6 +184,26 @@ newsPosts.Remove(newsPost);
 Console.WriteLine("\n--- News after delete ---");
 Console.WriteLine(newsPosts.Count == 0 ? "No news articles found" : "News exist");
 
+Console.WriteLine("\n--- Publishing News ---");
+News newsPost1 = new News(
+    "Julefrokost i klubben",
+    new DateOnly(2025, 12, 25),
+    new TimeOnly(12, 0),
+    "Vi har afholdt julefrokost i klubben!",
+    Guid.NewGuid()
+);
+
+// Before publishing
+Console.WriteLine($"Published? {newsPost1.IsPublished}");
+
+// Publish the news
+bool published = newsPost1.Publish();
+
+// After publishing
+Console.WriteLine($"Published? {newsPost1.IsPublished}");
+Console.WriteLine($"Published at: {newsPost1.PublishedAt}");
+
+
 #endregion
 
 #region Events
@@ -181,7 +232,6 @@ foreach (Event ev in eventRepo.GetAllEvents())
     Console.WriteLine(ev);
 }
 
-
 // Update event location
 newYearEvent.UpdateLocation("Main Hall");
 Console.WriteLine($"Updated Location: {newYearEvent.Location}");
@@ -207,17 +257,17 @@ foreach (Event ev in eventRepo.GetAllEvents())
         Console.WriteLine($"- {m.Name}, {m.Age} år");
     }
 }
- #endregion
+#endregion
 
 #region Booking
-    // Create booking
-    Booking booking = new Booking(
-    "2025-07-15",
-    "10:00",
+// Create booking
+Console.WriteLine("\n--- Bookings ---");
+Booking booking = new Booking(
+    new DateOnly(2025, 7, 15),
+    new TimeOnly(10, 0),
     "Island",
     500.0,
-    true
-);
+    true);
 
 // Show all bookings
 List<Booking> bookings = new List<Booking> { booking };
