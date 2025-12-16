@@ -25,7 +25,7 @@ namespace SejlklubLibraryFINAL
         }
 
         // Get a member by ID
-        public Member GetById(int id)
+        public Member GetById(Guid id)
         {
             foreach (Member member in _members)
             {
@@ -56,7 +56,7 @@ namespace SejlklubLibraryFINAL
         }
 
         // Delete member
-        public bool Delete(int id)
+        public bool Delete(Guid id)
         {
             var member = GetById(id);
             if (member != null)

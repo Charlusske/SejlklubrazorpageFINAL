@@ -7,15 +7,17 @@ namespace SejlklubLibraryFINAL
     public class Booking
     {
         #region Properties
-        public string Date { get; set; }
-        public string Time { get; set; }
+        public DateOnly Date { get; set; }
+        public TimeOnly Time { get; set; }
         public string Destination { get; set; }
         public double Price { get; set; }
         public bool Booked { get; set; }
+        public Member Member { get; set; }
+        public Boat Boat { get; set; }
         #endregion
 
         #region Constructor
-        public Booking(string date, string time, string destination, double price, bool booked)
+        public Booking(DateOnly date, TimeOnly time, string destination, double price, bool booked)
         {
             Date = date;
             Time = time;
