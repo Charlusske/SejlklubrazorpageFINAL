@@ -151,3 +151,14 @@ header {
 #more4 {
     display: none;
 }
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
