@@ -9,9 +9,16 @@ namespace SejlklubLibraryFINAL
 {
     public class News : Post
     {
-        #region Constructor
-        public News(string title, DateOnly date, TimeOnly time, string description, Guid guid) : base(title, date, time, description)
+        #region Properties
+        #endregion
+
+        #region Methods
+        public News(string title, DateTime dateTime, string description, Guid id)
         {
+            Title = title;
+            DateTime = dateTime;
+            Description = description;
+
         }
         #endregion
 
