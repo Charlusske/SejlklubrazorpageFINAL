@@ -13,11 +13,8 @@ namespace SejlklubLibraryFINAL
         #endregion
 
         #region Methods
-        public Event(string title, DateTime dateTime, string description, string location, Guid id)
+        public Event(string title, DateTime dateTime, string description, string location, Guid id) : base(title, dateTime, description)
         {
-            Title = title;
-            DateTime = dateTime;
-            Description = description;
             Location = location;
             Participants = new List<Member>();
         }
@@ -42,7 +39,7 @@ namespace SejlklubLibraryFINAL
 
         public override string ToString()
         {
-            return $"Event: {Title}\nDescription: {Description}\nDate: {Date} kl. {Time}\nLocation: {Location}\nId: {Id}";
+            return $"Event: {Title}\nDescription: {Description}\nDate and Time: {DateTime}\nLocation: {Location}\nId: {Id}";
         }
 
         #endregion

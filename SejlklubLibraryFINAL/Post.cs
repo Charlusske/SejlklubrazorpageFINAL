@@ -16,11 +16,10 @@ namespace SejlklubLibraryFINAL
         #endregion
 
         #region Constructor
-        public Post(string title, DateOnly date, TimeOnly time, string description)
+        public Post(string title, DateTime dateTime, string description)
         {
             Title = title;
-            Date = date;
-            Time = time;
+            DateTime = dateTime;
             Description = description;
             Id = Guid.NewGuid();
             IsPublished = false;
@@ -49,7 +48,7 @@ namespace SejlklubLibraryFINAL
 
         public override string ToString()
         {
-            return $"Title: {Title}\nDescription: {Description}\nDate: {Date} kl. {Time}\nId: {Id}";
+            return $"Title: {Title}\nDescription: {Description}\nDate and Time: {DateTime}\nId: {Id}";
         }
         #endregion
     }
