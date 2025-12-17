@@ -12,10 +12,12 @@ namespace SejlklubLibraryFINAL
         public List<Member> Participants { get; set; }
         #endregion
 
-        #region Constructor
-        public Event(string title, DateOnly date, TimeOnly time, string description, string location, Guid guid)
-           : base(title, date, time, description)
+        #region Methods
+        public Event(string title, DateTime dateTime, string description, string location, Guid id)
         {
+            Title = title;
+            DateTime = dateTime;
+            Description = description;
             Location = location;
             Participants = new List<Member>();
         }
