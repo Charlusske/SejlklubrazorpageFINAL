@@ -13,11 +13,10 @@ namespace SejlklubLibraryFINAL
         #endregion
 
         #region Methods
-        public Event(string title, DateOnly date, TimeOnly time, string description, string location, Guid id)
+        public Event(string title, DateTime dateTime, string description, string location, Guid id)
         {
             Title = title;
-            Date = date;
-            Time = time;
+            DateTime = dateTime;
             Description = description;
             Location = location;
             Id = id;

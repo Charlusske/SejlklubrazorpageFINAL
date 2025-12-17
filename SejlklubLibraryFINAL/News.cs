@@ -11,11 +11,10 @@ namespace SejlklubLibraryFINAL
         #endregion
 
         #region Methods
-        public News(string title, DateOnly date, TimeOnly time, string description, Guid id)
+        public News(string title, DateTime dateTime, string description, Guid id)
         {
             Title = title;
-            Date = date;
-            Time = time;
+            DateTime = dateTime;
             Description = description;
 
         }

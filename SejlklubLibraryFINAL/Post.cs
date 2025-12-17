@@ -8,8 +8,7 @@ namespace SejlklubLibraryFINAL
     {
         #region Properties
         public string Title { get; set; }
-        public DateOnly Date { get; set; }
-        public TimeOnly Time { get; set; }
+        public DateTime DateTime { get; set; }
         public string Description { get; set; }
         public Guid Guid { get; set; }
         #endregion
