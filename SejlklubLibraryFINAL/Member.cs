@@ -65,7 +65,6 @@ namespace SejlklubLibraryFINAL
             PhoneNumber = phoneNumber;
         }
 
-
         #endregion
 
         #region Methods
