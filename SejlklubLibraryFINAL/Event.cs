@@ -37,6 +37,12 @@ namespace SejlklubLibraryFINAL
         {
             Location = newLocation;
         }
+
+        public override string ToString()
+        {
+            return $"Event: {Title}\nDescription: {Description}\nDate: {Date} kl. {Time}\nLocation: {Location}\nId: {Id}";
+        }
+
         #endregion
 
     }

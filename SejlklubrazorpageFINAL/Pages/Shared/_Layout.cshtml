@@ -37,10 +37,14 @@
                         </li>
                     </ul>
 
-                    <ul style="float: right">
-                        
-                        <a asp-page="/Login" class="container btn" style="background-color: #0a2540; margin-top: 12px">Medlem Login</a>
-                    </ul>
+                    <div class="d-flex">
+                        <a asp-page="/Login"
+                           class="btn text-white rounded-pill px-4"
+                           style="background-color: #0a2540;">
+                            Medlem Login
+                        </a>
+                    </div>
+
                 </div>
             </div> 
         </nav>
@@ -55,11 +59,13 @@
             Contact details: Email: HilleroedSejlklub@gmail.com | Website: HillerødSejlklub.dk | &copy; 2025
         </div>
     </footer>
-    </div>
+   
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
+
+
 </body>
 </html>

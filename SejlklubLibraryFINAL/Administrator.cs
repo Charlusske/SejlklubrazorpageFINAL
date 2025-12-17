@@ -7,9 +7,11 @@ namespace SejlklubLibraryFINAL
     public class Administrator : Member
     {
         #region Constructor
-        public Administrator(string name, int age, string email, int id, string password, int phoneNumber) : base(name, age, email, id, password, phoneNumber)
+        public Administrator(string name, int age, string email, Guid id, string password, int phoneNumber)
+      : base(name, age, email, id, password, phoneNumber)
         {
         }
+
         #endregion
 
         #region Methods
@@ -23,9 +25,10 @@ namespace SejlklubLibraryFINAL
             repo.Update(member);
         }
 
-        public void DeleteMember(MemberRepository repo, int id)
+        public void DeleteMember(MemberRepository repo, Guid id)
         {
-            repo.Delete(id);
+            bool success = repo.Delete(id);
+            Console.WriteLine(success ? "Member deleted by admin." : "Member not found.");
         }
 
         public void EditBoat(Boat boat, string boatType, string model, string motor, double length, double width, double depth, int buildYear, string name,string boatNumber)
