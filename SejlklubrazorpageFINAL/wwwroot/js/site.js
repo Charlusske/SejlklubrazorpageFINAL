@@ -79,18 +79,6 @@ function myFunction4() {
         moreText.style.display = "inline";
     }
 }
-function myFunction5() {
-    var dots = document.getElementById("dots5");
-    var moreText = document.getElementById("more5");
-    var btnText = document.getElementById("myBtn5");
 
-    if (dots.style.display === "none") {
-        dots.style.display = "inline";
-        btnText.innerHTML = "Læs Mere";
-        moreText.style.display = "none";
-    } else {
-        dots.style.display = "none";
-        btnText.innerHTML = "Læs Mindre";
-        moreText.style.display = "inline";
-    }
-}
+
+
