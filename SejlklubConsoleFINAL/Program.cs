@@ -267,7 +267,9 @@ Booking booking = new Booking(
     new TimeOnly(10, 0),
     "Island",
     500.0,
-    true);
+    true, 
+    member1,
+    boat1);
 
 // Show all bookings
 List<Booking> bookings = new List<Booking> { booking };

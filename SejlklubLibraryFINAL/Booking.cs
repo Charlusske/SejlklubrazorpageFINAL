@@ -17,13 +17,15 @@ namespace SejlklubLibraryFINAL
         #endregion
 
         #region Constructor
-        public Booking(DateOnly date, TimeOnly time, string destination, double price, bool booked)
+        public Booking(DateOnly date, TimeOnly time, string destination, double price, bool booked, Member member, Boat boat)
         {
             Date = date;
             Time = time;
             Destination = destination;
             Price = price;
             Booked = booked;
+            Member = member;
+            Boat = boat;
         }
         #endregion
 
