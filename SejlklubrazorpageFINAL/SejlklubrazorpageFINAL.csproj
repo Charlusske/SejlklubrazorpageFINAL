@@ -10,8 +10,4 @@
     <ProjectReference Include="..\SejlklubLibraryFINAL\SejlklubLibraryFINAL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\img\" />
-  </ItemGroup>
-
 </Project>
