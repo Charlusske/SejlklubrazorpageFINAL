@@ -13,7 +13,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">SejlklubrazorpageFINAL</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Index" style="color: #212529"> Hillerød Sejlklub</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -26,9 +26,27 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Membership">Medlemsskab</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/RentBoat">Lej Båd</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/About">Om Klubben</a>
+                        </li>
                     </ul>
+
+                    <div class="d-flex">
+                        <a asp-page="/Login"
+                           class="btn text-white rounded-pill px-4"
+                           style="background-color: #0a2540;">
+                            Medlem Login
+                        </a>
+                    </div>
+
                 </div>
-            </div>
+            </div> 
         </nav>
     </header>
     <div class="container">
@@ -36,17 +54,18 @@
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - SejlklubrazorpageFINAL - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    <footer class="border-top footer text-muted mt-3">
+        <div class="text-center py-2">
+            Contact details: Email: HilleroedSejlklub@gmail.com | Website: HillerødSejlklub.dk | &copy; 2025
         </div>
     </footer>
-
+   
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
+
+
 </body>
 </html>

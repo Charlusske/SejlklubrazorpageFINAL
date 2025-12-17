@@ -1,0 +1,193 @@
+﻿@page
+@model SejlklubrazorpageFINAL.Pages.AboutModel
+@{
+}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div class="text-center">
+    <h1 class="display-4">Om Hillerød Sejlklub</h1>
+</div>
+
+<div class="card" style="border-color: antiquewhite">
+    <p>Hillerød Sejlklub er en klub for jollesejlere.</p>
+    <p>Vi har altid plads til børn og voksne, som vil sejle for deres fornøjelses skyld, for det sociale samvær, og evt. selv medvirke eller støtte andre sejlere i konkurrencesejlads.</p>
+    <p>
+        Hillerød Sejlklub er et samlingspunkt for sejlinteresserede i og omkring Hillerød. Klubben tilbyder et aktivt og inkluderende fællesskab, hvor både nybegyndere og erfarne sejlere kan dyrke glæden ved sejlads. Med fokus på sikkerhed, læring og kammeratskab skaber sejlklubben gode rammer for både træning, ture på vandet og sociale aktiviteter på land. <br />
+
+        Klubben lægger vægt på at udbrede interessen for sejlads og vandsport, blandt andet gennem undervisning, fælles arrangementer og aktiviteter for børn og unge. Hillerød Sejlklub er kendetegnet ved engagement, frivillighed og en stærk klubånd, hvor medlemmerne sammen bidrager til et levende og aktivt foreningsliv.
+    </p>
+</div>
+
+
+
+
+
+<div class="row row-cols-4">
+<div class="col">
+    <div class="card" style="width: 18rem; margin: 12px; border-color: antiquewhite">
+            <img src="~/images/optimist-jolle.jpg" style="height: 180px;" />
+        <div class="card-body" style="">
+            <h5 class="card-title">Optimistjolle</h5>
+                <p class="card-text">Klubben råder over et antal kluboptimistjoller. Denne jolle er den typiske begynderjolle, hvor piger og drenge fra 10 års alderen lærer at sejle og bliver tryg ved vandet.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col">
+    <div class="card" style="width: 18rem; margin: 12px; border-color: antiquewhite">
+       <img src="~/images/tera-jolle.jpg" style= "height: 180px;"/>
+        <div class="card-body" style="">
+            <h5 class="card-title">TERA</h5>
+               
+                <p class="card-text">
+                    Tera jollen er en moderne begynder-jolle, som kan sejles af unge fra 8 år og op. Det er en selvlænsende jolle, som ser godt ud, og som sejler godt.<span id="dots">...</span><span id="more">
+                        <br /> <br />
+
+                    Tera jollen sejler en smule hurtigere end en Optimist-jolle, og man kan træningsmæssigt uden problemer blande de to jolletyper.<br /> <br />
+
+                    Specifikationer: <br />
+                    - Længde 2.87 meter<br />
+                    - Bredde 1.23 meter<br />
+                    - Bom 2.08 meter<br />
+                    - Top- og undermast 2.37 meter<br />
+                    - Vægt 39kg<br />
+                    <br />
+                    Der findes tre typer sejl til en Tera-jolle:<br />
+
+                    - Tera Mini : 2.7 m2<br />
+                    - Tera Sport : 3.7 m2<br />
+                    - Tera Pro : 4.8 m2<br />
+                    </span>
+                    <button onclick="myFunction()" id="myBtn" style="border-radius: 4px;">Læs mere</button>
+                </p>
+
+        </div>
+    </div>
+</div>
+
+<div class="col">
+    <div class="card" style="width: 18rem; margin: 12px; border-color: antiquewhite">
+            <img src="~/images/feva-jolle.jpg" style="height: 180px;" />
+        <div class="card-body" style="">
+            <h5 class="card-title">FEVA</h5>
+                <p class="card-text">
+                    Klubben købte i 2012 med støtte fra TORM en FEVA jolle.
+
+                    Feva jollen er den perfekte jolle at begynde i, når man vil sejle 2 personer.<br /> Det er en moderne <span id="dots1">...</span><span id="more1">
+                        jolle, med et sportsligt præg. Den skal ikke lænses, selv ikke når den har været kæntret og er blevet rejst igen. <br /><br />
+
+                    Jollen egner sig fra ca. 10-11 år og op til 17-18 års alderen. <br /> <br />
+
+                    Specifikationer:<br />
+
+                    Længde: 3,64 m.<br />
+
+                    Bredde: 1,42 m<br />
+
+                    Vægt: 63 kg<br /><br />
+
+
+                    Sejl:<br />
+
+                    Storsejl S: 5,5 kvm<br />
+
+                    Storsejl XL: 6,5 kvm<br />
+
+                    Fok: 2,2 kvm<br />
+
+                    Genakker: 7,0 kvm<br />
+                    </span>
+                    <button onclick="myFunction1()" id="myBtn1" style="border-radius: 4px;">Læs mere</button>
+                </p>
+
+        </div>
+    </div>
+</div>
+
+<div class="col">
+    <div class="card" style="width: 18rem; margin: 12px; border-color: antiquewhite">
+            <img src="~/images/laser-jolle.jpg" style="height: 180px;" />
+        <div class="card-body" style="">
+            <h5 class="card-title">Laserjolle</h5>
+                <p class="card-text">
+                    Jollen er designet af Bruce Kirby i 1970. Idéen med laseren var, at den skulle være enkel. Derfor er masten simpelthen to aluminiumsrør, der sættes sammen<span id="dots2">...</span><span id="more2">
+                        , hvorefter sejlet trækkes ud over den. <br /><br /> Oprindeligt var der intet trim, så det kom an på, hvordan man sejlede, i stedet for hvordan man trimmede jollen. Der er dog senere tilsat lidt trim.<br /><br />
+
+                    Udover at laserjollen er enkel og nem at rigge til, kan den bruges af flere aldersgrupper og vægtklasser, da der er lavet flere forskellige rigge til den samme båd. Standard-riggen sejles af de tungeste over 60 kg. Radial-riggen sejles oftest af kvinder, da idealvægten er mellem 55-70 kg. <br /> <br /> Til børnene findes en endnu mindre rig, Laser 4.7, og den kan sejles helt ned til 35 kg.
+                    <br /><br />
+                    Klubben råder over 7 joller
+                    </span>
+                    <button onclick="myFunction2()" id="myBtn2" style="border-radius: 4px;">Læs mere</button>
+                </p>
+
+        </div>
+    </div>
+</div>
+
+<div class="col">
+    <div class="card" style="width: 18rem; margin: 12px; border-color: antiquewhite">
+            <img src="~/images/europa-jolle.jpg" style="height: 180px;" />
+        <div class="card-body" style="">
+            <h5 class="card-title">Europajolle</h5>
+                <p class="card-text">
+                    Europaen blev designet i 1960 af Alois Roland i Belgien, som en jolle af moth-typen.
+
+                    Europajollen blev for alvor kendt, da den i 1992 blev en olympisk klasse for kvinder som<span id="dots3">...</span><span id="more3">
+                        et alternativ til herrernes finnjolle.><br /><br />
+                    I 2008 blev den dog udskiftet med Laser Radial. Den er meget udbredt i det meste af Europa, og især i Skandinavien findes store kapsejladsfelter.><br /><br />
+                    Klubben råder over 3 joller
+                    </span>
+                    <button onclick="myFunction3()" id="myBtn3" style="border-radius: 4px;">Læs mere</button>
+                </p>
+
+        </div>
+    </div>
+</div>
+
+<div class="col">
+    <div class="card" style="width: 18rem; margin: 12px; border-color: antiquewhite">
+            <img src="~/images/snipe-jolle.jpg" style="height: 180px;" />
+        <div class="card-body" style="">
+            <h5 class="card-title">Snipejolle</h5>
+                <p class="card-text">
+                    En Snipe er en lille tomands sejljolle, der blev designet af William F. Crosby i 1931.<br /><br /> Bådens klassetegn er silhetten af en bekkasin, og dette har <span id="dots4">...</span><span id="more4">
+                        givet den sit navn, da snipe er det engelske navn for bekkasin. Der sejles Snipe i 26 forskellige lande, og i hele verden er der blevet konstrueret mere end 30.000 Snipes.<br /><br />
+
+                    Den har udviklet sig til en kendt, taktisk kapsejladsjolle med kapsejladsfelter i hele verden. Dette gælder især i USA, men også i andre lande, som f.eks. Norge, findes der mange Snipes.<br /><br /> Snipen er simpel og lille, hvilket gør den nem at sejle, men samtidig er niveauet i toppen højt. Selvom konkurrencen i toppen af Snipe-ranglisten er stor, går sejlerne også meget op i det sociale. Mange af regattaerne er derfor lige så kendte for sejladsen som for festerne. Snipe-sloganet er “Seriøs sejlads, seriøs sjov”. <br /><br />
+
+                    Klubben råder over 3 joller.
+                    </span>
+                    <button onclick="myFunction4()" id="myBtn4" style="border-radius: 4px;">Læs mere</button>
+                </p>
+
+        </div>
+    </div>
+</div>
+
+<div class="col">
+    <div class="card" style="width: 18rem; margin: 12px; border-color: antiquewhite">
+            <img src="~/images/wayfarer-jolle.jpg" style="height: 180px;" />
+        <div class="card-body" style="">
+            <h5 class="card-title">Wayfarer</h5>
+                <p class="card-text">
+                    Søstærk jolle for seniorer. Den kan bruges lige godt til kapsejlads og eventuelt til en tur til Kongens Bøge.<br /><br />
+
+                    Klubben har en jolle af denne type
+                </p>
+
+        </div>
+    </div>
+</div>
+
+<div class="col">
+    <div class="card" style="width: 18rem; margin: 12px; border-color: antiquewhite">
+            <img src="~/images/lynaes-jolle.jpg" style="height: 180px;" />
+        <div class="card-body" style="">
+            <h5 class="card-title">Lynæs</h5>
+                <p class="card-text">Lynæs 14 er en lille stabil kølbåd. De 4 Lynæs 14, som klubben råder over, bruges primært af seniorerne og til familiesejlads på søen, Men sejler også kapsejlads mod hinanden.
+                </p>
+
+        </div>
+    </div>
+</div>
+</div>

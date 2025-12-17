@@ -9,7 +9,7 @@ namespace SejlklubLibraryFINAL
     {
         #region Properties
         public string Location { get; set; }
-        public Guid Id { get; set; }
+        public List<Member> Participants { get; set; }
         #endregion
 
         #region Methods
@@ -19,8 +19,33 @@ namespace SejlklubLibraryFINAL
             DateTime = dateTime;
             Description = description;
             Location = location;
-            Id = id;
+            Participants = new List<Member>();
         }
         #endregion
+
+        #region Methods
+        public bool AddMember(Member member)
+        {
+            if (Participants.Contains(member))
+            {
+                return false;
+            }
+
+            Participants.Add(member);
+            return true;
+        }
+
+        public void UpdateLocation(string newLocation)
+        {
+            Location = newLocation;
+        }
+
+        public override string ToString()
+        {
+            return $"Event: {Title}\nDescription: {Description}\nDate: {Date} kl. {Time}\nLocation: {Location}\nId: {Id}";
+        }
+
+        #endregion
+
     }
 }

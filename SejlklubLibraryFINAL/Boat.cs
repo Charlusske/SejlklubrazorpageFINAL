@@ -51,7 +51,6 @@ namespace SejlklubLibraryFINAL
         #endregion
 
         #region Methods
-
         public override string ToString()
         {
             return $"Boattype - {BoatType}\nModel - {Model}\nMotor - {Motor}\n Length/Width/Depth - {Length}m - {Width}m - {Depth}m\nBuilt in {BuildYear}\nName: {Name}\n Boat Number: {BoatNumber}\n ID: {Id}";
